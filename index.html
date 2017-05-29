@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Graphic">
+    <meta name="description" content="Graphics">
+    <meta itemprop="name" content="Graphics">
+    <meta itemprop="description" content="Graphics">
+    <meta property="og:title" content="Yuri-B">
+    <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="">
+    <title>Yuri-B</title>
+</head>
+
+<body>
+
+    <script>
+    var input;
+    var input = 'testing the elements';
+
+    var keyboard = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
+
+    //split the words
+    var inputArray = input.split(' ');
+
+    // for every word, split into letters
+
+    var outputArray = [];
+    for (var j=0; j<inputArray.length; j++) {
+
+      //create a letter array within a word
+      var word = inputArray[j].toString().split('');
+
+      for (var letterIndex=0; letterIndex<word.length; letterIndex++) {
+        var modifiedChar = word[letterIndex];
+
+        if(word.indexOf(modifiedChar) >= 0) {
+          // get index of input element on keyboard
+          var getIndex = word.indexOf(modifiedChar);
+
+          // suppose the letter in input array is q; let's change it to the next letter in array, w.
+          var newIndex = getIndex + 1;
+          modifiedChar = keyboard[newIndex];
+        }
+
+        outputArray.push(modifiedChar);
+      }
+
+      outputArray.push(' ');
+
+    }
+
+    var output = outputArray.toString();
+
+    console.log(output);
+
+    </script>
+
+</body>
+
+</html>
